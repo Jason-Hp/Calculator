@@ -16,6 +16,14 @@ let multiply = function(a,b=a){
     return round(a*b);
 }
 let divide = function(a,b=a){
+    if (b == 0){
+        displayString = "DIVIDE BY 0!"
+        display(displayString);
+        equation = ``;
+        displayString=``;
+        return null;
+    }
+
     return round(a/b);
 }
 let round = function(number){
@@ -89,6 +97,11 @@ btnADD.addEventListener("click",()=>{
     }
     else{
         let newValue = operate();
+
+        if (newValue === "null"){
+            return;
+        }
+
         displayString = newValue;
         equation = newValue + "+";
         display(displayString);
@@ -107,6 +120,11 @@ btnSUB.addEventListener("click",()=>{
     }
     else{
         let newValue = operate();
+
+        if (newValue === "null"){
+            return;
+        }
+
         displayString = newValue;
         equation = newValue + "-";
         display(displayString);
@@ -125,6 +143,11 @@ btnMUL.addEventListener("click",()=>{
     }
     else{
         let newValue = operate();
+
+        if (newValue === "null"){
+            return;
+        }
+
         displayString = newValue;
         equation = newValue + "*";
         display(displayString);
@@ -143,6 +166,11 @@ btnDIV.addEventListener("click",()=>{
     }
     else{
         let newValue = operate();
+
+        if (newValue === "null"){
+            return;
+        }
+
         displayString = newValue;
         equation = newValue + "/";
         display(displayString);
@@ -152,6 +180,12 @@ btnDIV.addEventListener("click",()=>{
 
 btnEQL.addEventListener("click",()=>{
     if(equation.length === 0){
+        return;
+    }
+
+    let newValue = operate();
+
+    if (newValue === "null"){
         return;
     }
 

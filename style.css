@@ -24,11 +24,17 @@
     overflow: hidden;
 }
 
-#button{
+.button{
     box-sizing: border-box;
     width:24%;
     height:110px;
     border:1px solid black;
     border-radius: 15px;
     font-size: 50px;
+    background-color: aliceblue;
+    transition: background-color 0.5s;
+}
+
+.button:active{
+    background-color: grey;
 }
